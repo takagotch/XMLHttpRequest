@@ -56,4 +56,29 @@ intergace XMLHttpRequest : XMLHttpRequestEventTarget{
 };
 
 
+//FormData
+typedef(File or USVString) FormDataEntryValue;
+[Constructor(optional HTLMFormElement foem),
+  Exposed=(Window, Worker)]
+interface FormData{
+  void append(USVString name, USVString value);
+  void append(USVString name, Blob blobValue, optional USVString filename);
+  void delete(USVString name);
+  FormDtaEntryValue? get(USVString name);
+  sequence<FormDataEntryValue> getAll(USVString name);
+  boolean has(USVString name);
+  void set(USVString name);
+  void set(USVString name, Blob blobValue, optional USVString filename);
+  iterable<USVString, FormDataEntryValue>;
+};
+
+
+//ProgressEvent
+[Constructor(DOMString type, optional ProgressEventInit eventInitDict),
+  Exposed=(Winsow,DedicatedWorker, SharedWorker)]
+interface ProgressEvent : Event{
+  readonly attribute boolean lengthComputable;
+  readonly attribute unsigned long long loaded;
+  readonly attribute unsigned long long total;
+}
 

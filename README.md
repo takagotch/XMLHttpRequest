@@ -1,5 +1,5 @@
 ### xhr.spec.whatwg
-
+---
 
 https://xhr.spec.whatwg.org/
 
